@@ -1,0 +1,6 @@
+{
+	"appId": "jmw.dictation.app",
+	"appName": "dictation",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

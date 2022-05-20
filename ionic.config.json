@@ -1,0 +1,7 @@
+{
+    "name": "dictation",
+    "integrations": {
+        "capacitor": {}
+    },
+    "type": "angular"
+}
