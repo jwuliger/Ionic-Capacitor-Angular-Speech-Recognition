@@ -1,9 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
+
+    namespace 'jmw.dictation.app'
     compileSdkVersion rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "io.ionic.starter"
+        applicationId "jmw.dictation.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

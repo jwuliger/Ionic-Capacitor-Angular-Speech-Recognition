@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "numeracy-journal": {
+      "hosting": {
+        "app": [
+          "numeracy-journal"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "numeracy-journal"
+  }
+}
