@@ -14,7 +14,10 @@
     <div id="container">
         <span *ngIf="isMobile">
             <div *ngIf="data">
-                <div class="matches" *ngFor="let match of data.matches">
+                <div
+                    class="matches"
+                    *ngFor="let match of data.matches; trackBy: trackItems"
+                >
                     {{ match }}
                 </div>
             </div>
@@ -26,7 +29,7 @@
         </span>
         <!-- Firebase -->
         <ul>
-            <li *ngFor="let item of items$ | async">
+            <li *ngFor="let item of items$ | async; trackBy: trackItems">
                 {{ item.comment }} ({{ item.number }})
             </li>
         </ul>

@@ -34,7 +34,7 @@ export class HomePage implements OnInit {
     startListening() {
         SpeechRecognition.start({
             language: 'en-US',
-            maxResults: 2,
+            maxResults: 1,
             prompt: 'Say something',
             partialResults: false,
             popup: false,
@@ -46,6 +46,10 @@ export class HomePage implements OnInit {
     // stopListening() {
     //     SpeechRecognition.stop();
     // }
+
+    trackItems(index: number, itemObject: any) {
+        return itemObject.id;
+    }
 }
 
 export interface Item {
