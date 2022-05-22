@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { SpeechRecognition } from '@capacitor-community/speech-recognition';
-import { Firestore, collectionData, collection } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
 import { Platform } from '@ionic/angular';
 
 @Component({
@@ -11,15 +9,9 @@ import { Platform } from '@ionic/angular';
 })
 export class HomePage implements OnInit {
     data: any;
-    items$: Observable<Item[]>;
     isMobile = this.platform.is('mobile');
 
-    constructor(private firestore: Firestore, public platform: Platform) {
-        const itemsRef = collection(this.firestore, 'entries');
-        this.items$ = collectionData(itemsRef, { idField: 'id' }) as Observable<
-            Item[]
-        >;
-    }
+    constructor(public platform: Platform) {}
 
     ngOnInit() {
         if (this.isMobile) {
@@ -50,10 +42,4 @@ export class HomePage implements OnInit {
     trackItems(index: number, itemObject: any) {
         return itemObject.id;
     }
-}
-
-export interface Item {
-    comment: string;
-    // eslint-disable-next-line id-blacklist
-    number: string;
 }

@@ -25,13 +25,8 @@
             <ion-button color="success" (click)="startListening()"
                 >Listen</ion-button
             >
+            <!-- iOS Only -->
             <!-- <ion-button color="danger" (click)="stopListening()">Stop</ion-button> -->
         </span>
-        <!-- Firebase -->
-        <ul>
-            <li *ngFor="let item of items$ | async; trackBy: trackItems">
-                {{ item.comment }} ({{ item.number }})
-            </li>
-        </ul>
     </div>
 </ion-content>

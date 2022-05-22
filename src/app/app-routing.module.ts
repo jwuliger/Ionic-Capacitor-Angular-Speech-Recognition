@@ -8,6 +8,13 @@ const routes: Routes = [
             import('./pages/home/home.module').then((m) => m.HomePageModule),
     },
     {
+        path: 'firebase',
+        loadChildren: () =>
+            import('./pages/firebase/firebase.module').then(
+                (m) => m.FirebasePageModule
+            ),
+    },
+    {
         path: '',
         redirectTo: 'home',
         pathMatch: 'full',
