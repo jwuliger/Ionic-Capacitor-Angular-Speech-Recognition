@@ -1,36 +1,35 @@
 <ion-header [translucent]="true">
     <ion-toolbar>
-        <ion-title> Dictation Example </ion-title>
+        <ion-title> Dictation Service </ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
     <ion-header collapse="condense">
         <ion-toolbar>
-            <ion-title size="large">Dictation Example</ion-title>
+            <ion-title size="large">Dictation Service</ion-title>
         </ion-toolbar>
     </ion-header>
 
-    <ion-router-link color="success" href="/firebase"
-        >Firebase CRUD</ion-router-link
-    >
+    <nav style="margin: 25px">
+        <a routerLink="/firebase">Firebase CRUD</a>
+    </nav>
 
     <div id="container">
         <span *ngIf="isMobile">
-            <div *ngIf="data">
-                <div
-                    class="matches"
-                    *ngFor="let match of data.matches; trackBy: trackItems"
-                >
-                    {{ match }}
-                </div>
-            </div>
-
-            <ion-button color="success" (click)="startListening()"
+            <ion-button
+                color="success"
+                (click)="dictationService.startListening()"
                 >Listen</ion-button
             >
-            <!-- iOS Only -->
-            <!-- <ion-button color="danger" (click)="stopListening()">Stop</ion-button> -->
+            <div *ngIf="dictationService.utterances" style="margin-top: 50px">
+                <div
+                    class="matches"
+                    *ngFor="let utterance of dictationService.utterances.matches; trackBy: trackItems"
+                >
+                    {{ utterance }}
+                </div>
+            </div>
         </span>
     </div>
 </ion-content>
